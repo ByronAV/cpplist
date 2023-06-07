@@ -62,6 +62,12 @@ size_t DoubleList<T>::Find(T val)
 }
 
 template<typename T>
+void DoubleList<T>::Delete(T val)
+{
+    
+}
+
+template<typename T>
 std::ostream& operator<<(std::ostream& stream, DoubleList<T>& list)
 {
     list.current = list.head;
