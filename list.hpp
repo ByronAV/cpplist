@@ -21,16 +21,22 @@ public:
     DoubleList(T in_value);
 
     // Destructor
-    ~DoubleList();
-
-    // Insert a value at the back of the list
-    void InsertBack(T val);
+    ~DoubleList() = default;
 
     // Insert a value at the front of the list
     void InsertFront(T val);
 
+    // Insert a value at the back of the list
+    void InsertBack(T val);
+
+    // Insert value *after* the Node[idx]
+    void InsertAfter(T val, size_t idx);
+
+    // Insert value *before* the Node[idx]
+    void InsertBefore(T val, size_t idx);
+
     // Delete a value from the list
-    void Delete(T val);
+    //void Delete(T val);
 
     // Find if value is in the list
     // @return: the index in the list
@@ -38,6 +44,8 @@ public:
 
     // Return size of list
     uint16_t getSize() const;
+
+    void MoveCurrent(size_t idx);
 
     friend std::ostream& operator<< <T>(std::ostream& stream, DoubleList<T>& list);
 private:
