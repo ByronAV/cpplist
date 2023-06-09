@@ -19,6 +19,12 @@ int main(void) {
     std::cout << list << std::endl;
     list.InsertBefore(99, 8);
     std::cout << list << std::endl;
+    list.Delete(10);
+    std::cout << list << std::endl;
+    list.Delete(9);
+    std::cout << list << std::endl;
+    list.Delete(56);
+    std::cout << list << std::endl;
     } catch (std::out_of_range& e) {
         std::cout << e.what() << std::endl;
     }

@@ -115,7 +115,7 @@ void DoubleList<T>::MoveCurrent(size_t idx)
 }
 
 template<typename T>
-size_t DoubleList<T>::Find(T val)
+int DoubleList<T>::Find(T val)
 {
     current = head;
     size_t i = 0;
@@ -128,11 +128,32 @@ size_t DoubleList<T>::Find(T val)
     return -1;
 }
 
-// template<typename T>
-// void DoubleList<T>::Delete(T val)
-// {
-    
-// }
+template<typename T>
+int DoubleList<T>::Delete(T val)
+{
+    if (this->Find(val) == -1)
+        return -1;
+    current = head;
+    size_t counter = 0;
+    while(current)
+    {
+        if (current->value == val)
+        {
+            if (current != head)
+                { current->previous->next = current->next; }
+            else
+                { head = current->next; }
+            if (current != tail)
+                { current->next->previous = current->previous; }
+            else
+                { tail = current->previous; }
+            ++counter;
+            --size;
+        }
+        current = current->next;
+    }
+    return counter;
+}
 
 template<typename T>
 std::ostream& operator<<(std::ostream& stream, DoubleList<T>& list)

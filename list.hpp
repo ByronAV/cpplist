@@ -36,11 +36,12 @@ public:
     void InsertBefore(T val, size_t idx);
 
     // Delete a value from the list
-    //void Delete(T val);
+    // @return the number of items removed or -1 if no items were removed
+    int Delete(T val);
 
-    // Find if value is in the list
-    // @return: the index in the list
-    size_t Find(T val);
+    // Find the first occurance of a value in the list
+    // @return: the index in the list or -1 if not in the list
+    int Find(T val);
 
     // Return size of list
     uint16_t getSize() const;
