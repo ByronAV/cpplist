@@ -5,6 +5,9 @@
 
 template<typename T>
 DoubleList<T>::DoubleList(T in_val) : size(1) {
+    // We're not dealing with stringlike in this implementation
+    static_assert(std::is_arithmetic<T>());
+
     this->head = std::make_shared<Node>();
 
     // Head doesn't have previous
