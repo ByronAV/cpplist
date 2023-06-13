@@ -9,6 +9,7 @@ The building requires `CMake`. Build as follows:
 cmake <build-dir>
 ```
 then navigate to the building dir and just call `make`. This will create an executable file called `list`.
+NOTE: In order to run the `make` concurrently you can run `make -j <number_of_threads>`
 
 ## Testing
 More tests to be added in the future.

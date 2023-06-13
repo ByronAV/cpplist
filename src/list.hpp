@@ -46,6 +46,7 @@ public:
     // Return size of list
     uint16_t getSize() const;
 
+    // Moving the buffer of current to the point in idx
     void MoveCurrent(size_t idx);
 
     friend std::ostream& operator<< <T>(std::ostream& stream, DoubleList<T>& list);

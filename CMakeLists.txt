@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.14)
 include(FetchContent)
+include_directories(src)
 
 #project name
 project (DoubleLinkedListCMake)
@@ -12,7 +13,7 @@ FetchContent_Declare(fmt
 )
 FetchContent_MakeAvailable(fmt)
 
-add_executable(list main.cpp list.tpp)
+add_executable(list src/main.cpp src/list.tpp)
 
 target_compile_options(list PRIVATE -Wextra -Wpedantic -Werror)
 target_link_libraries(list fmt::fmt)
