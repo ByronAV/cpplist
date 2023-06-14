@@ -59,4 +59,28 @@ TEST_CASE("Insert Before Test", "[IBe]") {
     REQUIRE_NOTHROW(list.InsertAfter(2, 1));
 }
 
-// TODO: Add tests for Find and Delete
+TEST_CASE("Find Test", "[F]") {
+    DoubleList<int> list(5);
+
+    for(int i = 0; i < 50; ++i)
+        list.InsertBack(i);
+    
+    REQUIRE(list.Find(6) == 0);
+    REQUIRE(list.Find(45) == 0);
+    REQUIRE(list.Find(51) == -1);
+}
+
+TEST_CASE("Delete Test", "[D]") {
+    DoubleList<int> list(5);
+
+    for(int i = 0; i < 50; ++i)
+        list.InsertBack(i);
+
+    REQUIRE(list.getSize() == 51);
+
+    list.Delete(5);
+    list.Delete(34);
+    list.Delete(35);
+    REQUIRE(list.getSize() == 47);
+    REQUIRE(list.Delete(78) == -1);
+}
