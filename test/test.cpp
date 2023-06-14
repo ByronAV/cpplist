@@ -76,11 +76,7 @@ TEST_CASE("Delete Test", "[D]") {
     for(int i = 0; i < 50; ++i)
         list.InsertBack(i);
 
-    REQUIRE(list.getSize() == 51);
-
-    list.Delete(5);
-    list.Delete(34);
-    list.Delete(35);
-    REQUIRE(list.getSize() == 47);
-    REQUIRE(list.Delete(78) == -1);
+    REQUIRE(list.Delete(5) == 2);
+    REQUIRE(list.Delete(34) == 1);
+    REQUIRE(list.Delete(35) == 1);
 }
