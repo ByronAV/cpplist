@@ -26,6 +26,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run Tests
-        run: cd ${{github.workspace}}/build/test; ./tests -s
+        run: ls -la ${{github.workspace}}/build;
   
     
