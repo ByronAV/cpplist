@@ -3,7 +3,7 @@
 ## Description
 This is a mini project of a C++ Double Linked List. You can add, delete and find elements in the list as of 09/06/2023. New methods might be added in the future.
 
-The linked list can only work with numeric types right now (`int`, `float`, `double` etc.). It won't work for `std::string` or the sort.
+The linked list can only work with numeric types right now (`int`, `float`, `double` etc.). It won't work for `std::string` or similar structures.
 
 The linked list can hold duplicate elements. Each `Delete` will delete all of the elements that hold a specific value.
 ## Compilation
