@@ -10,10 +10,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    - name: Install dependencies
+      run: |
+        sudo apt update
+        sudo apt install libfmt-dev
+        git clone https://github.com/catchorg/Catch2.git
+        cd Catch2/
+        cmake -Bbuild -H. -DBUILD_TESTING=OFF
+        sudo cmake --build build/ --target install
     - name: Configure CMake
       run: cmake -B ${{github.workspace}}/build
     - name: Run Make
-      run: cmake --build ${{github.workspace}}/build
+      run: cd ${{github.workspace}}/build; sudo make
   tests:
     runs-on: ubuntu-latest
     steps:
